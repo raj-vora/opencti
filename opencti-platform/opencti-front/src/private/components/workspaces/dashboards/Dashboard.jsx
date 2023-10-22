@@ -81,13 +81,11 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
   const ReactGridLayout = useMemo(() => WidthProvider(RGL), []);
   const classes = useStyles();
   const isExploreEditor = useGranted([EXPLORE_EXUPDATE]);
-  const [manifest, setManifest] = useState(
-    workspace.manifest && workspace.manifest.length > 0
-      ? JSON.parse(fromB64(workspace.manifest))
-      : { widgets: {}, config: {} },
-  );
-  useEffect(() => {
-    const newManifestEncoded = toB64(JSON.stringify(manifest));
+  const manifest = workspace.manifest && workspace.manifest.length > 0
+    ? JSON.parse(fromB64(workspace.manifest))
+    : { widgets: {}, config: {} };
+  const saveManifest = (newManifest) => {
+    const newManifestEncoded = toB64(JSON.stringify(newManifest));
     if (workspace.manifest !== newManifestEncoded) {
       commitMutation({
         mutation: workspaceMutationFieldPatch,
@@ -100,7 +98,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
         },
       });
     }
-  }, [manifest]);
+  };
   const [deleting, setDeleting] = useState(false);
   const userCanEdit = workspace.currentUserAccessRight === 'admin'
     || workspace.currentUserAccessRight === 'edit';
@@ -129,7 +127,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
         newManifest,
       );
     }
-    setManifest(newManifest);
+    saveManifest(newManifest);
   };
   const getMaxY = () => {
     return Object.values(manifest.widgets).reduce(
@@ -151,7 +149,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
       maxX = 0;
       maxY += 2;
     }
-    setManifest({
+    const newManifest = {
       ...manifest,
       widgets: {
         ...manifest.widgets,
@@ -160,13 +158,15 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
           layout: { i: widgetManifest.id, x: maxX, y: maxY, w: 4, h: 2 },
         },
       },
-    });
+    };
+    saveManifest(newManifest);
   };
   const handleUpdateWidget = (widgetManifest) => {
-    setManifest({
+    const newManifest = {
       ...manifest,
       widgets: { ...manifest.widgets, [widgetManifest.id]: widgetManifest },
-    });
+    };
+    saveManifest(newManifest);
   };
   const handleDeleteWidget = (widgetId) => {
     setDeleting(true);
@@ -175,7 +175,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
       R.dissoc(widgetId, manifest.widgets),
       manifest,
     );
-    setManifest(newManifest);
+    saveManifest(newManifest);
   };
   const handleDuplicateWidget = (widgetManifest) => {
     const newId = uuid();
@@ -184,7 +184,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
       R.assoc(newId, R.assoc('id', newId, widgetManifest), manifest.widgets),
       manifest,
     );
-    setManifest(newManifest);
+    saveManifest(newManifest);
   };
   const onLayoutChange = (layouts) => {
     if (!deleting) {
@@ -197,7 +197,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
         ),
         manifest,
       );
-      setManifest(newManifest);
+      saveManifest(newManifest);
     }
   };
   const getDayStartDate = () => {

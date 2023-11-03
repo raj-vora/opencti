@@ -90,6 +90,12 @@ type CsvMapperEdge {
   node: CsvMapper!
 }
 
+type CsvMapperTestResult {
+  objects: String!
+  nbRelationships: Int!
+  nbEntities: Int!
+}
+
 # Queries
 type Query {
   csvMapper(id: String!): CsvMapper @auth

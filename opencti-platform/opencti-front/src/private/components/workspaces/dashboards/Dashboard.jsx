@@ -80,7 +80,6 @@ const useStyles = makeStyles(() => ({
 const DashboardComponent = ({ workspace, noToolbar }) => {
   const ReactGridLayout = useMemo(() => WidthProvider(RGL), []);
   const classes = useStyles();
-  const isExploreEditor = useGranted([EXPLORE_EXUPDATE]);
   const manifest = workspace.manifest && workspace.manifest.length > 0
     ? JSON.parse(fromB64(workspace.manifest))
     : { widgets: {}, config: {} };
@@ -102,7 +101,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
   const [deleting, setDeleting] = useState(false);
   const userCanEdit = workspace.currentUserAccessRight === 'admin'
     || workspace.currentUserAccessRight === 'edit';
-  const isDashbaordUpdater = useGranted([EXPLORE_EXUPDATE]);
+  const isExploreUpdater = useGranted([EXPLORE_EXUPDATE]);
+  const isWrite = isExploreUpdater && userCanEdit && !noToolbar;
   const handleDateChange = (type, value) => {
     // eslint-disable-next-line no-nested-ternary
     const newValue = value && value.target
@@ -270,7 +270,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'line':
@@ -281,7 +282,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'area':
@@ -292,7 +294,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'timeline':
@@ -313,7 +316,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'horizontal-bar':
@@ -328,7 +332,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
               dataSelection={widget.dataSelection}
               parameters={widget.parameters}
               variant="inLine"
-              withExportPopover={isExploreEditor}
+              withExportPopover={true}
+              isReadOnly={!isWrite}
             />
           );
         }
@@ -339,7 +344,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'radar':
@@ -350,7 +356,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'heatmap':
@@ -361,7 +368,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'tree':
@@ -372,7 +380,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       default:
@@ -424,7 +433,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'line':
@@ -435,7 +445,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'area':
@@ -446,7 +457,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'timeline':
@@ -467,7 +479,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'horizontal-bar':
@@ -482,7 +495,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
               dataSelection={widget.dataSelection}
               parameters={widget.parameters}
               variant="inLine"
-              withExportPopover={isExploreEditor}
+              withExportPopover={true}
+              isReadOnly={!isWrite}
             />
           );
         }
@@ -493,7 +507,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'radar':
@@ -504,7 +519,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'heatmap':
@@ -515,7 +531,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'tree':
@@ -526,7 +543,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'map':
@@ -588,7 +606,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'line':
@@ -599,7 +618,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'area':
@@ -610,7 +630,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'donut':
@@ -621,7 +642,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'horizontal-bar':
@@ -632,7 +654,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'radar':
@@ -643,7 +666,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       case 'heatmap':
@@ -654,7 +678,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
           />
         );
       case 'tree':
@@ -665,7 +689,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       default:
@@ -687,7 +712,8 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
             dataSelection={widget.dataSelection}
             parameters={widget.parameters}
             variant="inLine"
-            withExportPopover={isExploreEditor}
+            withExportPopover={true}
+            isReadOnly={!isWrite}
           />
         );
       default:
@@ -711,7 +737,7 @@ const DashboardComponent = ({ workspace, noToolbar }) => {
           variant="dashboard"
         />
       )}
-      {isDashbaordUpdater && userCanEdit ? (
+      {isExploreUpdater && userCanEdit ? (
         <ReactGridLayout
           className="layout"
           margin={[20, 20]}

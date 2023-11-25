@@ -343,6 +343,10 @@ const i18n = {
       Replace: 'Reemplazarr',
       'Add an action': 'Añadir una acción',
       Export: 'Exportar',
+      Duplicate: 'Duplicar',
+      'The dashboard has been duplicated. You can manage it':
+        'El tablero ha sido duplicado. puedes gestionarlo',
+      here: 'aquí',
       Delete: 'Suprimir',
       deleted: 'borrado',
       Remove: 'Borrar',
@@ -1125,8 +1129,10 @@ const i18n = {
       "You're targeting more than 1000 entities with this background task, be sure of what you're doing!":
         '¡Estás seleccionando más de 1000 entidades en esta tarea en segundo plano así que estáte seguro de que sabes lo que haces!',
       Filters: 'Filtros',
-      'Filters are not fully displayed': 'Los filtros no se muestran completamente',
-      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ': 'Este filtro contiene grupos de filtros imbricados, que aún no son completamente compatibles en la visualización de la plataforma y solo se pueden editar a través de la API. Es posible que se hayan creado a través de la API o una migración desde un formato de filtro anterior. Para tu información, aquí está el contenido del objeto de filtro:',
+      'Filters are not fully displayed':
+        'Los filtros no se muestran completamente',
+      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ':
+        'Este filtro contiene grupos de filtros imbricados, que aún no son completamente compatibles en la visualización de la plataforma y solo se pueden editar a través de la API. Es posible que se hayan creado a través de la API o una migración desde un formato de filtro anterior. Para tu información, aquí está el contenido del objeto de filtro:',
       'Number of elements': 'Número de elementos',
       'Download this file': 'Descargar este fichero',
       'Download in pdf': 'Descargar en pdf',
@@ -1395,7 +1401,8 @@ const i18n = {
       Relations: 'Relaciones',
       relations: 'relaciones',
       URL: 'URL',
-      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.': 'Su URL contiene filtros en un formato obsoleto, los parámetros almacenados en la URL han sido eliminados.',
+      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.':
+        'Su URL contiene filtros en un formato obsoleto, los parámetros almacenados en la URL han sido eliminados.',
       Severity: 'Severidad',
       Priority: 'Prioridad',
       Rating: 'Clasificación',
@@ -2030,7 +2037,12 @@ const i18n = {
       filter_createdBy: 'Autor',
       filter_category: 'Categoría',
       filter_entity_types: 'Tipo de entidads',
-      filter_elementType: 'Related entities types',
+      filter_contextEntityId: 'Related entity',
+      filter_contextEntityType: 'Types of related entity',
+      filter_contextCreator: 'Creator of related entity',
+      filter_contextCreatedBy: 'Author of related entity',
+      filter_contextObjectLabel: 'Label of related entity',
+      filter_contextObjectMarking: 'Marking of related entity',
       filter_members_user: 'Usuario',
       filter_members_group: 'Grupo',
       filter_members_organization: 'Organización',
@@ -2273,7 +2285,8 @@ const i18n = {
       'Do you want to delete this CSV mapper ?':
         '¿Desea eliminar este mapeador CSV?',
       'Attribute mapping configuration': 'Configuración de mapeo de atributos',
-      'I would like to use a EE feature ...': 'Me gustaría utilizar una función EE ({feature}) pero no tengo EE activado.\nMe gustaría hablar con usted sobre la activación de EE.',
+      'I would like to use a EE feature ...':
+        'Me gustaría utilizar una función EE ({feature}) pero no tengo EE activado.\nMe gustaría hablar con usted sobre la activación de EE.',
       'Organization sharing': 'Compartir organización',
     },
     'fr-fr': {
@@ -2637,7 +2650,8 @@ const i18n = {
       'Add an action': 'Ajouter une action',
       Export: 'Exporter',
       Duplicate: 'Dupliquer',
-      'The dashboard has been duplicated. You can manage it': 'Le tableau de bord a été dupliqué. Vous pouvez l\'administrer',
+      'The dashboard has been duplicated. You can manage it':
+        "Le tableau de bord a été dupliqué. Vous pouvez l'administrer",
       here: 'ici',
       Delete: 'Supprimer',
       deleted: 'supprimé',
@@ -2699,7 +2713,7 @@ const i18n = {
       'Create dashboard': 'Créer un tableau de bord',
       'Update dashboard': 'Modifier le tableau de bord',
       'Create investigation': 'Créer une investigation',
-      'Update investigation': 'Modifier l\'investigation',
+      'Update investigation': "Modifier l'investigation",
       'Create an event': 'Créer un événement',
       'Update an event': 'Modifier un événement',
       'Add a widget': 'Ajouter un widget',
@@ -3415,8 +3429,10 @@ const i18n = {
       "You're targeting more than 1000 entities with this background task, be sure of what you're doing!":
         'Vous ciblez plus de 1000 entités avec cette tâche de fond, soyez sûrs de ce que vous faites !',
       Filters: 'Filtres',
-      'Filters are not fully displayed': 'Les filtres ne sont pas entièrement affichés',
-      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ': 'Ce filtre contient des groupes de filtres imbriqués, qui ne sont pas encore totalement pris en charge dans l\'affichage de la plateforme et ne peuvent être modifiés que via l\'API. Ils peuvent avoir été créés via l\'API ou lors d\'une migration à partir d\'un format de filtre précédent. Pour votre information, voici le contenu de l\'objet de filtre:',
+      'Filters are not fully displayed':
+        'Les filtres ne sont pas entièrement affichés',
+      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ':
+        "Ce filtre contient des groupes de filtres imbriqués, qui ne sont pas encore totalement pris en charge dans l'affichage de la plateforme et ne peuvent être modifiés que via l'API. Ils peuvent avoir été créés via l'API ou lors d'une migration à partir d'un format de filtre précédent. Pour votre information, voici le contenu de l'objet de filtre:",
       'Number of elements': "Nombre d'éléments",
       'Download this file': 'Télécharger ce fichier',
       'Download in pdf': 'Télécharger en pdf',
@@ -3685,7 +3701,8 @@ const i18n = {
       Relations: 'Relations',
       relations: 'relations',
       URL: 'URL',
-      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.': 'Votre URL contient des filtres dans un format obsolète, les paramètres stockés dans l\'URL ont été supprimés.',
+      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.':
+        "Votre URL contient des filtres dans un format obsolète, les paramètres stockés dans l'URL ont été supprimés.",
       Severity: 'Sévérité',
       Priority: 'Priorité',
       Rating: 'Notation',
@@ -4309,7 +4326,12 @@ const i18n = {
       filter_createdBy: 'Auteur',
       filter_category: 'Catégorie',
       filter_entity_types: "Types d'entité",
-      filter_elementType: "Types d'entités liées",
+      filter_contextEntityId: 'Entité liée',
+      filter_contextEntityType: "Types d'entités liées",
+      filter_contextCreator: "Créateur de l'entité liée",
+      filter_contextCreatedBy: "Auteur de l'entité liée",
+      filter_contextObjectLabel: "Label de l'entité liée",
+      filter_contextObjectMarking: "Marquage de l'entité liée",
       filter_members_user: 'Utilisateur',
       filter_members_group: 'Groupe',
       filter_members_organization: 'Organisation',
@@ -4556,7 +4578,8 @@ const i18n = {
       'Do you want to delete this CSV mapper ?':
         'Voulez-vous supprimer ce mappage CSV ?',
       'Attribute mapping configuration': "Configuration de mappage d'attributs",
-      'I would like to use a EE feature ...': "J'aimerais utiliser une fonctionnalité ({feature}) sous Enterprise Edition qui n'est pas activée.\nJ'aimerais savoir si il est possible d'activer EE.",
+      'I would like to use a EE feature ...':
+        "J'aimerais utiliser une fonctionnalité ({feature}) sous Enterprise Edition qui n'est pas activée.\nJ'aimerais savoir si il est possible d'activer EE.",
       'Organization sharing': 'Partage dans les organisations',
     },
     'ja-jp': {
@@ -4690,6 +4713,8 @@ const i18n = {
       'Do you want to delete this sighting?': 'この目撃情報を削除しますか？',
       'Do you want to delete this workspace?':
         'このワークスペースを削除しますか？',
+      'Do you want to duplicate this workspace?':
+        'このワークスペースを複製しますか?',
       'Do you want to delete this widget?': 'このウィジェットを削除しますか？',
       'Do you want to delete this attack pattern?':
         'この攻撃パターンを削除しますか？',
@@ -4882,6 +4907,10 @@ const i18n = {
       Replace: '置換',
       'Add an action': 'アクションを追加',
       Export: '出力',
+      Duplicate: '重複',
+      'The dashboard has been duplicated. You can manage it':
+        'ダッシュボードが複製されました。管理できるよ',
+      here: 'ここ',
       Delete: '削除',
       deleted: '削除',
       Remove: '解除',
@@ -5645,7 +5674,8 @@ const i18n = {
         'このバックグラウンドタスクで1000以上のエンティティをターゲットにしています。実行内容を確認してください。',
       Filters: 'フィルタ',
       'Filters are not fully displayed': 'フィルターが完全に表示されていません',
-      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ': 'このフィルターには、プラットフォームの表示ではまだ完全にサポートされていない、入れ子になったフィルターグループが含まれており、API経由でのみ編集することができます。これらはAPI経由で作成されたか、以前のフィルターフォーマットからの移行で作成された可能性があります。フィルターオブジェクトの内容は次のとおりです',
+      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ':
+        'このフィルターには、プラットフォームの表示ではまだ完全にサポートされていない、入れ子になったフィルターグループが含まれており、API経由でのみ編集することができます。これらはAPI経由で作成されたか、以前のフィルターフォーマットからの移行で作成された可能性があります。フィルターオブジェクトの内容は次のとおりです',
       'Number of elements': '要素数',
       'Download this file': 'ファイルのダウンロード',
       'Download in pdf': 'PDFでダウンロード',
@@ -5909,7 +5939,8 @@ const i18n = {
       Relations: 'リレーション',
       relations: 'リレーション',
       URL: 'URL',
-      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.': 'お使いのURLには廃止された形式のフィルタが含まれており、URLに保存されていたパラメータが削除されました。',
+      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.':
+        'お使いのURLには廃止された形式のフィルタが含まれており、URLに保存されていたパラメータが削除されました。',
       Severity: '重大度',
       Priority: '優先順位',
       Rating: '評価',
@@ -6514,7 +6545,12 @@ const i18n = {
       filter_createdBy: '作成者',
       filter_category: 'カテゴリー',
       filter_entity_types: 'エンティティ タイプ',
-      filter_elementType: 'Related entities types',
+      filter_contextEntityId: 'Related entity',
+      filter_contextEntityType: 'Types of related entity',
+      filter_contextCreator: 'Creator of related entity',
+      filter_contextCreatedBy: 'Author of related entity',
+      filter_contextObjectLabel: 'Label of related entity',
+      filter_contextObjectMarking: 'Marking of related entity',
       filter_members_user: '使い手',
       filter_members_group: '族',
       filter_members_organization: '組織',
@@ -6751,7 +6787,8 @@ const i18n = {
       'Do you want to delete this CSV mapper ?':
         'このCSVマッパーを削除しますか？',
       'Attribute mapping configuration': '属性マッピングの設定',
-      'I would like to use a EE feature ...': 'EE 機能 ({feature}) を使用したいのですが、EE がアクティブ化されていません。\nEEの有効化について相談したいと思います。',
+      'I would like to use a EE feature ...':
+        'EE 機能 ({feature}) を使用したいのですが、EE がアクティブ化されていません。\nEEの有効化について相談したいと思います。',
       'Organization sharing': '組織の共有',
     },
     'zh-cn': {
@@ -7035,6 +7072,10 @@ const i18n = {
       Replace: '替换',
       'Add an action': '增加一个动作',
       Export: '导出',
+      Duplicate: '复制',
+      'The dashboard has been duplicated. You can manage it':
+        '仪表板已被复制。你可以管理它',
+      here: '这里',
       Delete: '删除',
       deleted: '刪除',
       Remove: '移除',
@@ -7754,7 +7795,8 @@ const i18n = {
         '您正在使用此后台任务针对超过1000个实体，请确保您正在执行的操作!',
       Filters: '过滤器',
       'Filters are not fully displayed': '篩選器未完全顯示',
-      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ': '这个过滤器包含嵌套的过滤器组，目前平台显示不完全支持，只能通过API进行编辑。它们可能是通过API或从之前的过滤器格式迁移而来。供您参考，以下是过滤器对象的内容',
+      'This filter contains imbricated filter groups, that are not fully supported yet in the platform display and can only be edited via the API. They might have been created via the API or a migration from a previous filter format. For your information, here is the content of the filter object: ':
+        '这个过滤器包含嵌套的过滤器组，目前平台显示不完全支持，只能通过API进行编辑。它们可能是通过API或从之前的过滤器格式迁移而来。供您参考，以下是过滤器对象的内容',
       'Number of elements': '元素数量',
       'Download this file': '下载此文件',
       'Download in pdf': '以pdf格式下載',
@@ -8017,7 +8059,8 @@ const i18n = {
       Relations: '关系',
       relations: '关系',
       URL: 'URL',
-      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.': '您的URL包含過時格式的篩選器，URL中存儲的參數已被刪除。',
+      'Your url contains filters in a deprecated format, parameters stored in the url have been removed.':
+        '您的URL包含過時格式的篩選器，URL中存儲的參數已被刪除。',
       Severity: '严重程度',
       Priority: '优先事项',
       Rating: '评分',
@@ -8592,7 +8635,12 @@ const i18n = {
       filter_createdBy: '作者',
       filter_category: '類別',
       filter_entity_types: '實體類型',
-      filter_elementType: 'Related entities types',
+      filter_contextEntityId: 'Related entity',
+      filter_contextEntityType: 'Types of related entity',
+      filter_contextCreator: 'Creator of related entity',
+      filter_contextCreatedBy: 'Author of related entity',
+      filter_contextObjectLabel: 'Label of related entity',
+      filter_contextObjectMarking: 'Marking of related entity',
       filter_members_user: '用戶',
       filter_members_group: '班組',
       filter_members_organization: '公家',
@@ -8837,7 +8885,8 @@ const i18n = {
       'There are not any configurations set yet': '目前尚未设置任何配置',
       'Do you want to delete this CSV mapper ?': '您要删除此CSV映射吗？',
       'Attribute mapping configuration': '属性映射配置',
-      'I would like to use a EE feature ...': '我想使用 EE 功能 ({feature})，但我沒有啟動 EE。\n我想和您討論一下啟動EE的問題。',
+      'I would like to use a EE feature ...':
+        '我想使用 EE 功能 ({feature})，但我沒有啟動 EE。\n我想和您討論一下啟動EE的問題。',
       'Organization sharing': '組織共享',
     },
     'en-us': {
@@ -9103,7 +9152,12 @@ const i18n = {
       filter_createdBy: 'Author',
       filter_category: 'Category',
       filter_entity_types: 'Entity types',
-      filter_elementType: 'Related entities types',
+      filter_contextEntityId: 'Related entity',
+      filter_contextEntityType: 'Types of related entity',
+      filter_contextCreator: 'Creator of related entity',
+      filter_contextCreatedBy: 'Author of related entity',
+      filter_contextObjectLabel: 'Label of related entity',
+      filter_contextObjectMarking: 'Marking of related entity',
       filter_members_user: 'User',
       filter_members_group: 'Group',
       filter_members_organization: 'Organization',
@@ -9261,7 +9315,8 @@ const i18n = {
       create: 'Creation events',
       update: 'Modification events',
       delete: 'Deletion events',
-      'I would like to use a EE feature ...': "I would like to use a EE feature ({feature}) but I don't have EE activated.\nI would like to discuss with you about activating EE.",
+      'I would like to use a EE feature ...':
+        "I would like to use a EE feature ({feature}) but I don't have EE activated.\nI would like to discuss with you about activating EE.",
     },
   },
 };

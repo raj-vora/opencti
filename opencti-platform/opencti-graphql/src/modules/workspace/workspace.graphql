@@ -73,6 +73,25 @@ input WorkspaceAddInput {
     investigated_entities_ids: [String]
 }
 
+input WorkspaceDuplicateInput {
+    type: String!
+    name: String!
+    description: String
+    manifest: String
+    tags: [String]
+}
+
+input ImportConfigurationInput {
+    importType: String!
+    file: Upload!
+    dashboardManifest: String
+}
+
+input ImportWidgetInput {
+    file: Upload!
+    dashboardManifest: String
+}
+
 type Mutation {
     workspaceAdd(input: WorkspaceAddInput!): Workspace @auth(for: [EXPLORE_EXUPDATE])
     workspaceDelete(id: ID!): ID @auth(for: [EXPLORE_EXUPDATE_EXDELETE])
@@ -81,6 +100,7 @@ type Mutation {
     workspaceContextPatch(id: ID!, input: EditContext!): Workspace
     workspaceContextClean(id: ID!): Workspace
     workspaceConfigurationImport(file: Upload!): String!
+    workspaceWidgetConfigurationImport(id: ID!, input: ImportConfigurationInput!): Workspace @auth(for: [EXPLORE_EXUPDATE])
 }
 
 # Subscriptions

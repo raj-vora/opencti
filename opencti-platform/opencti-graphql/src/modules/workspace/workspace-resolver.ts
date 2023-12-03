@@ -12,7 +12,7 @@ import {
   workspaceEditContext,
   workspaceEditField,
   workspaceImportConfiguration,
-  workspaceImportWidgetConfiguration,
+  workspaceImportWidgetConfiguration, generateWorkspaceExportConfiguration, generateWidgetExportConfiguration,
 } from './workspace-domain';
 import { fetchEditContext, pubSubAsyncIterator } from '../../database/redis';
 import { BUS_TOPICS } from '../../config/conf';
@@ -37,6 +37,8 @@ const workspaceResolvers: Resolvers = {
     objects: (workspace, args, context) => objects(context, context.user, workspace, args),
     editContext: (workspace) => fetchEditContext(workspace.id),
     toStixReportBundle: (workspace, _, context) => toStixReportBundle(context, context.user, workspace),
+    toConfigurationExport: (workspace, _, context) => generateWorkspaceExportConfiguration(context, context.user, workspace),
+    toWidgetExport: (workspace, { widgetId }, context) => generateWidgetExportConfiguration(context, context.user, workspace, widgetId),
   },
   Mutation: {
     workspaceAdd: (_, { input }, context) => {

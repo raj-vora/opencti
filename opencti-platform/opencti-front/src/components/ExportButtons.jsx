@@ -169,10 +169,30 @@ class ExportButtons extends Component {
       handleExportDashboard,
       investigationAddFromContainer,
       history,
+      handleDashboardDuplication,
+      variant,
     } = this.props;
     return (
       <div className={classes.exportButtons} id="export-buttons">
         <ToggleButtonGroup size="small" color="secondary" exclusive={true}>
+          {handleDashboardDuplication && variant === 'dashboard' && (
+            <Tooltip title={t('Duplicate the dashboard')}>
+              <ToggleButton
+                sx={{ padding: '2px' }}
+                size="small"
+                value="duplicate-dashboard"
+              >
+                <IconButton
+                  aria-label="copy"
+                  onClick={handleDashboardDuplication.bind(this)}
+                  color="primary"
+                  size="small"
+                >
+                  <ContentCopyOutlined fontSize="small" />
+                </IconButton>
+              </ToggleButton>
+            </Tooltip>
+          )}
           <Tooltip title={t('Export to image')}>
             <ToggleButton onClick={this.handleOpenImage.bind(this)}>
               <ImageOutlined fontSize="small" color="primary" />
